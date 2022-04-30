@@ -59,20 +59,7 @@
             <a href="pages/manager/manager.jsp">后台管理</a>
         </div>
         <div id="blank">
-            <form action="sellerServlet" method="post">
-                <input type="hidden" name="action" value="pageByName">
-                商家名称：
-                <input type="text" id="sellerName" name="sellerName" value="${requestScope.sellerName}" class="input_content">
 
-                <input type="hidden" name="ip" id="ip">
-                <input type="hidden" name="date" id="date">
-                <input type="hidden" name="role" value="管理员">
-                <input type="hidden" name="roleId" value="1">
-                <input type="hidden" name="operate" value="查询">
-                <input type="hidden" name="target" id="target">
-
-                <input type="submit" value="查询" id="sellerSearch">
-            </form>
         </div>
         <div id="jump_message">
             <span>欢迎您，${sessionScope.manager.name}</span>
@@ -85,7 +72,23 @@
             <div id="jump_message_blank"></div>
         </div>
     </div>
-    <div id="a"></div>
+    <div id="a">
+        <div  style="width: 400px;margin: 0 auto;text-align: center">
+            <form action="sellerServlet" method="post">
+                <input type="hidden" name="action" value="pageByName">
+                <input type="text" id="sellerName" name="sellerName" value="${requestScope.sellerName}" class="input_content">
+
+                <input type="hidden" name="ip" id="ip">
+                <input type="hidden" name="date" id="date">
+                <input type="hidden" name="role" value="管理员">
+                <input type="hidden" name="roleId" value="1">
+                <input type="hidden" name="operate" value="查询">
+                <input type="hidden" name="target" id="target">
+
+                <input type="submit" value="查询" id="sellerSearch">
+            </form>
+        </div>
+    </div>
 
     <div id="main">
         <div id="main_inner">

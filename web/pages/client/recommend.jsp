@@ -93,20 +93,7 @@
             <a href="recommendServlet?action=recommend" id="recommend">刷新商品</a>
         </div>
         <div id="blank">
-            <form action="client/goodsServlet" method="get">
-                <input type="hidden" name="action" value="pageByName">
-                商品名称：
-                <input type="text" id="goods_name" name="goods_name" value="${requestScope.goods_name}" class="input_content">
 
-                <input type="hidden" name="ip" id="ip">
-                <input type="hidden" name="date" id="date">
-                <input type="hidden" name="role" value="用户">
-                <input type="hidden" name="roleId" value="${sessionScope.user.id}">
-                <input type="hidden" name="operate" value="查询">
-                <input type="hidden" name="target" id="target">
-
-                <input type="submit" value="查询" id="goods_search">
-            </form>
         </div>
         <div id="jump_message">
             <c:if test="${empty sessionScope.username}">
@@ -127,7 +114,23 @@
         </div>
     </div>
 
-    <div id="a"></div>
+    <div id="a">
+        <div  style="width: 400px;margin: 0 auto;text-align: center">
+            <form action="client/goodsServlet" method="get">
+                <input type="hidden" name="action" value="pageByName">
+                <input type="text" id="goods_name" name="goods_name" value="${requestScope.goods_name}" class="input_content">
+
+                <input type="hidden" name="ip" id="ip">
+                <input type="hidden" name="date" id="date">
+                <input type="hidden" name="role" value="用户">
+                <input type="hidden" name="roleId" value="${sessionScope.user.id}">
+                <input type="hidden" name="operate" value="查询">
+                <input type="hidden" name="target" id="target">
+
+                <input type="submit" value="查询" id="goods_search">
+            </form>
+        </div>
+    </div>
 
     <main id="main">
         <div id="main_inner">

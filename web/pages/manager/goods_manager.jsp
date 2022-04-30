@@ -85,31 +85,7 @@
             </c:if>
         </div>
         <div id="blank">
-            <form action="manager/goodsServlet" method="post">
-                <input type="hidden" name="action" value="pageByName">
-                <input type="hidden" name="sellerId" value="${param.sellerId}">
-                商品名称：
-                <input type="text" id="goodsName" name="goodsName" value="${requestScope.goodsName}" class="input_content">
 
-                <%--        靠js获取--%>
-                <input type="hidden" name="ip" id="ip">
-                <input type="hidden" name="date" id="date">
-
-                <c:if test="${not empty sessionScope.manager}">
-                    <input type="hidden" name="role" value="管理员">
-                    <input type="hidden" name="roleId" value="1">
-                </c:if>
-                <c:if test="${not empty sessionScope.seller}">
-                    <input type="hidden" name="role" value="商家">
-                    <input type="hidden" name="roleId" value="${param.sellerId}">
-                </c:if>
-                <input type="hidden" name="operate" value="查询">
-                <%--            目标值就用goodsName就行，利用js给target赋值--%>
-                <input type="hidden" name="target" id="target">
-
-
-                <input type="submit" value="查询" id="goodsSearch">
-            </form>
         </div>
         <div id="jump_message">
             <c:if test="${not empty sessionScope.manager}">
@@ -130,7 +106,32 @@
             <div id="jump_message_blank"></div>
         </div>
     </div>
-    <div id="a"></div>
+    <div id="a">
+        <form action="manager/goodsServlet" method="post">
+            <input type="hidden" name="action" value="pageByName">
+            <input type="hidden" name="sellerId" value="${param.sellerId}">
+            <input type="text" id="goodsName" name="goodsName" value="${requestScope.goodsName}" class="input_content">
+
+            <%--        靠js获取--%>
+            <input type="hidden" name="ip" id="ip">
+            <input type="hidden" name="date" id="date">
+
+            <c:if test="${not empty sessionScope.manager}">
+                <input type="hidden" name="role" value="管理员">
+                <input type="hidden" name="roleId" value="1">
+            </c:if>
+            <c:if test="${not empty sessionScope.seller}">
+                <input type="hidden" name="role" value="商家">
+                <input type="hidden" name="roleId" value="${param.sellerId}">
+            </c:if>
+            <input type="hidden" name="operate" value="查询">
+            <%--            目标值就用goodsName就行，利用js给target赋值--%>
+            <input type="hidden" name="target" id="target">
+
+
+            <input type="submit" value="查询" id="goodsSearch">
+        </form>
+    </div>
 
     <div id="main">
 <%--        表格区域--%>

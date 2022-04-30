@@ -23,7 +23,7 @@ a:link , a:hover , a:visited, a:active{
     line-height: 54px;
     /*设置当前标签内的文字水平居中*/
     /*background-color: rgb(246,249,250);*/
-    /*border-bottom: 1px gray solid;*/
+    border-bottom: 1px gray solid;
 }
 
 #header_title {

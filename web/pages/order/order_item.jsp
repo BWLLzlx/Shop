@@ -83,7 +83,7 @@
 					<span>欢迎您，${sessionScope.manager.name}</span>
 					<a href="manager/goodsServlet?action=page">商品管理</a>
 					<a href="orderServlet?action=page">订单管理</a>
-					<a href="sellerServlet?action=queryForAllSeller">商家管理</a>
+					<a href="sellerServlet?action=page">商家管理</a>
 					<a href="loginInfoServlet?action=page">登录记录</a>
 					<a href="operationServlet?action=page">操作记录</a>
 					<a href="managerServlet?action=logout">退出登录</a>
