@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>html5上传后立即显示</title>
+  <script type="text/javascript" src="static/script/jquery-1.7.2.js"></script>
+  <script type="text/javascript">
+
+    function ProcessFile(e) {
+      //创建文件对象
+      var file = document.getElementById('file').files[0];
+      var photo =  document.getElementById("photo");
+      //如果有获取到东西
+      if (file) {
+        //创建文件读取对象
+        var reader = new FileReader();
+        //加载完成后
+        reader.onload = function (event) {
+          var txt = event.target.result;
+          photo.src = txt;
+        };
+      }
+      reader.readAsDataURL(file);
+    }
+
+    function contentLoaded() {
+      document.getElementById('file').addEventListener('change',
+              ProcessFile, false);
+    }
+
+    window.addEventListener("DOMContentLoaded", contentLoaded, false);
+
+  </script>
+</head>
+<body>
+    请选取一个图像文件: <input type="file" id="file" name="file"/>
+    <div id="result">
+      <img src="../../static/img/1.png" id="photo">
+    </div>
+
+</body>
+</html>

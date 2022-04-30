@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>居中练习</title>
+  <style>
+    .a{
+      background-color: #baf;
+      height: 200px;
+      width: 200px;
+
+
+      /*设置自己水平居中*/
+      margin: 0 auto;
+
+      /*设置自己内部的元素垂直居中*/
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .b{
+      background-color: #bfa;
+      height: 100px;
+      width: 100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="a">
+    <div class="b">
+      内容
+    </div>
+  </div>
+
+
+</body>
+</html>
