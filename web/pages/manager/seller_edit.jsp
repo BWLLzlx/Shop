@@ -90,10 +90,12 @@
         </div>
     </div>
 
+    <div id="a"></div>
+
     <div id="main">
         <div id="main_inner">
             <form action="sellerServlet?action=${param.method}" method="post">
-                <div style="width: 400px;height: 100px;text-align: center">
+                <div style="width: 400px;height: 100px;text-align: center;margin: 0 auto">
                     <div style="font-size: 50px">编辑商家信息</div>
                     <div id="errorMessage" style="color: red;height: 50px;line-height: 50px;">${requestScope.msg}</div>
                 </div>
@@ -112,7 +114,7 @@
                 <input type="hidden" name="operate" value="${param.method=="add"?"添加":"修改"}">
                 <input type="hidden" name="target" value="商家${requestScope.seller.id}">
 
-                <div style="width: 400px;height: 50px;line-height: 50px;text-align: center">
+                <div style="width: 400px;height: 50px;line-height: 50px;text-align: center;margin: 0 auto">
                     <input type="submit" name="submit" value="提交" id="submit_btn">
                 </div>
             </form>

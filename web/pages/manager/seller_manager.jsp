@@ -116,7 +116,7 @@
                                 <td><a href="sellerServlet?action=getSeller&method=update&sellerId=${seller.id}">编辑</a></td>
                                 <td>
                                         <%--                        <a href="sellerServlet?action=delete&sellerId=${seller.id}" class="delete">删除</a>--%>
-                                    <form action="sellerServlet" method="get">
+                                    <form action="sellerServlet" method="post">
                                         <input type="hidden" name="action" value="delete">
                                         <input type="hidden" name="sellerId" value="${seller.id}">
 

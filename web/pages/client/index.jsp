@@ -115,22 +115,6 @@
                 <a href="recommendServlet?action=recommend" id="recommend">个性推荐</a>
             </div>
             <div id="blank">
-<%--                原本是get，改成post看看有没有问题--%>
-<%--                从结果来看，没问题--%>
-<%--                <form action="client/goodsServlet" method="post">--%>
-<%--                    <input type="hidden" name="action" value="pageByName">--%>
-<%--                    商品名称：--%>
-<%--                    <input type="text" id="goods_name" name="goods_name" value="${requestScope.goods_name}" class="input_content">--%>
-
-<%--                    <input type="hidden" name="ip" id="ip">--%>
-<%--                    <input type="hidden" name="date" id="date">--%>
-<%--                    <input type="hidden" name="role" value="用户">--%>
-<%--                    <input type="hidden" name="roleId" value="${sessionScope.user.id}">--%>
-<%--                    <input type="hidden" name="operate" value="查询">--%>
-<%--                    <input type="hidden" name="target" id="target">--%>
-
-<%--                    <input type="submit" value="查询" id="goods_search">--%>
-<%--                </form>--%>
             </div>
             <div id="jump_message">
                 <c:if test="${empty sessionScope.username}">
@@ -218,9 +202,6 @@
                                                 <span>库存：</span>
                                                 <span>${goods.stock}</span>
                                             </div>
-                                                <%--                                <div class="goods_add">--%>
-                                                <%--                                    <button goodsId="${goods.id}"  stock="${goods.stock}" class="addToCart">加入购物车</button>--%>
-                                                <%--                                </div>--%>
                                             <div class="goods_test">
                                                 <form action="cartServlet">
                                                     <input type="hidden" name="action" value="addItem">

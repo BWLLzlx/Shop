@@ -92,8 +92,8 @@ public class GoodsServlet extends BaseServlet{
                             System.out.println("上传的文件名：" +uuid+"_"+ fileItem.getName());
 //                            fileItem.write(new File("/usr/local/tomcat7/apache-tomcat-7.0.82/webapps/Shop/static/img/"+uuid+".jpg"));
 //                            goods.setImgPath("static/img/"+uuid+".jpg");
-                            fileItem.write(new File("d:\\Desktop\\Shop\\web\\static\\img\\"+uuid+"_"+fileItem.getName()));
-                            goods.setImgPath("static/img/"+uuid+"_"+fileItem.getName());
+                            fileItem.write(new File("d:\\Desktop\\Shop\\web\\static\\img\\"+uuid+".jpg"));
+                            goods.setImgPath("static/img/"+uuid+".jpg");
                         }else{
                             System.out.println("上传文件为空");
                             goods.setImgPath("static/img/1.png");
@@ -196,11 +196,11 @@ public class GoodsServlet extends BaseServlet{
                         if(fileItem.getName()!=null && !"".equals(fileItem.getName())){
                             System.out.println("上传的文件名：" +uuid+"_"+ fileItem.getName());
                             //下面这是windows的路径，最后部署的时候，需要修改路径为linux的路径
-                            fileItem.write(new File("d:\\Desktop\\Shop\\web\\static\\img\\"+uuid+"_"+fileItem.getName()));
-                            goods.setImgPath("static/img/"+uuid+"_"+fileItem.getName());
+                            fileItem.write(new File("d:\\Desktop\\Shop\\web\\static\\img\\"+uuid+".jpg"));
+                            goods.setImgPath("static/img/"+uuid+".jpg");
                             //这是linux项目的图片存储的路径
                             // /usr/local/tomcat7/apache-tomcat-7.0.82/webapps/Shop_war
-                            //又多弄了一个地址，就是Shop，把下面的链接改了，要弄的话，统一成Shop或者统一成Shop_war，还需要统一的包括afford的图片路径
+                            //又多弄了一个地址，就是Shop，把下面的链接改了，要弄的话，统一成Shop或者统一成Shop_war
 //                            fileItem.write(new File("/usr/local/tomcat7/apache-tomcat-7.0.82/webapps/Shop/static/img/"+uuid+".jpg"));
 //                            goods.setImgPath("static/img/"+uuid+".jpg");
                         }else{
@@ -243,7 +243,7 @@ public class GoodsServlet extends BaseServlet{
             req.getRequestDispatcher("/pages/manager/goods_manager.jsp").forward(req,resp);
         }else{//如果不是0就说明是seller登录
             Page<Goods> page = goodsService.pageBySellerId(pageNo,pageSize,sellerId);
-            page.setUrl("manager/goodsServlet?action=page");
+            page.setUrl("manager/goodsServlet?action=page&sellerId="+sellerId);
             req.setAttribute("page",page);
             req.getRequestDispatcher("/pages/manager/goods_manager.jsp").forward(req,resp);
         }
@@ -276,7 +276,7 @@ public class GoodsServlet extends BaseServlet{
             req.getRequestDispatcher("/pages/manager/goods_manager.jsp").forward(req,resp);
         }else{//如果不是0就说明是seller登录
             Page<Goods> page = goodsService.pageBySellerIdAndGoodsName(pageNo,pageSize,sellerId,goodsName);
-            StringBuilder stringBuilder = new StringBuilder("manager/goodsServlet?action=pageByName");
+            StringBuilder stringBuilder = new StringBuilder("manager/goodsServlet?action=pageByName&sellerId="+sellerId);
             if (goodsName != null){
                 stringBuilder.append("&goodsName=").append(goodsName);
             }

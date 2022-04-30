@@ -172,9 +172,8 @@
                             </td>
                             <c:if test="${not empty sessionScope.seller}">
                                 <td><a href="manager/goodsServlet?action=getGoods&id=${goods.id}&method=updateWithPhoto&sellerId=${sessionScope.seller.id}">修改</a></td>
-                                <%--<a class="delete" id="delete" href="manager/goodsServlet?action=delete&id=${goods.id}&sellerId=${sessionScope.seller.id}">删除</a>--%>
                                 <td>
-                                    <form action="manager/goodsServlet" method="get">
+                                    <form action="manager/goodsServlet" method="post">
                                         <input type="hidden" name="action" value="delete">
                                         <input type="hidden" name="id" value="${goods.id}">
                                         <input type="hidden" name="sellerId" value="${sessionScope.seller.id}">

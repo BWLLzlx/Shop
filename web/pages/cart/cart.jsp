@@ -97,20 +97,7 @@
             <a href="recommendServlet?action=recommend" id="recommend">个性推荐</a>
         </div>
         <div id="blank">
-            <form action="client/goodsServlet" method="get">
-                <input type="hidden" name="action" value="pageByName">
-                商品名称：
-                <input type="text" id="goods_name" name="goods_name" value="${requestScope.goods_name}" class="input_content">
 
-                <input type="hidden" name="ip" id="ip">
-                <input type="hidden" name="date" id="date">
-                <input type="hidden" name="role" value="用户">
-                <input type="hidden" name="roleId" value="${sessionScope.user.id}">
-                <input type="hidden" name="operate" value="查询">
-                <input type="hidden" name="target" id="target">
-
-                <input type="submit" value="查询" id="goods_search">
-            </form>
         </div>
         <div id="jump_message">
             <span>欢迎您，${sessionScope.username}</span>
@@ -165,7 +152,7 @@
                     <td>总金额${sessionScope.cart.totalPrice}元，</td>
                     <td><a id="clearCart" href="cartServlet?action=clear">清空购物车</a></td>
                     <td>
-                        <form action="orderServlet" method="get">
+                        <form action="orderServlet" method="post">
                             <input type="hidden" name="action" value="addOrder">
 
                             <input type="hidden" name="ip" class="submit_ip" id="ip">

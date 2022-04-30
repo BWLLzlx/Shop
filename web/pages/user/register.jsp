@@ -68,14 +68,14 @@
     <div id="a"></div>
 
     <div id="main">
-        <form action="userServlet" method="post" style="width: 400px;height: 400px;margin: 100px auto auto auto">
+        <form action="userServlet" method="post" style="width: 600px;height: 400px;margin: 100px auto auto auto">
             <input type="hidden" name="action" value="register">
-            <div style="width: 400px ;height: 100px;text-align: center">
-                <div style="width: 400px;height: 50px;font-size: 50px">注册</div>
-                <div id="errorMessage" style="color: red;width: 400px;height: 50px;line-height: 50px;">${requestScope.msg}</div>
+            <div style="width: 600px ;height: 100px;text-align: center">
+                <div style="width: 600px;height: 50px;font-size: 50px">注册</div>
+                <div id="errorMessage" style="color: red;width: 600px;height: 50px;line-height: 50px;">${requestScope.msg}</div>
             </div>
 
-            <div style="width: 400px;height: 250px;text-align: center">
+            <div style="width: 600px;height: 250px;text-align: center">
                 <table style="margin: 0 auto">
                     <tr>
                         <td>用户名：</td>
@@ -108,7 +108,7 @@
                     </tr>
                 </table>
             </div>
-            <div style="width: 400px;height: 50px;text-align: center;line-height: 50px">
+            <div style="width: 600px;height: 50px;text-align: center;line-height: 50px">
                 <input type="submit" value="提交" id="submit">
             </div>
         </form>
